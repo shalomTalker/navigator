@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Navigator</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+<body>
+    <main class="container">  
+        <form id="side-container" class="row form-group pull-left col-sm-5">    
+              <h1>Navigator</h1>
+              <select id="to-input" class="form-control">
+                  <option disabled selected>Select your desire destination</option>
+              </select>
+
+              <select id="travel-mode-input" class="form-control">
+                  <option disabled selected>Select your travel mode</option>
+                  <option value="driving">By car</option>
+                  <option value="bicycling">Bicycling</option>
+                  <option value="walking">Walking</option>
+              </select>
+
+              <select id="unit-input" class="form-control">
+                  <option disabled selected>Select your scale unit system</option>
+                  <option value="imperial">Imperial</option>
+                  <option value="metric">Metric</option>
+              </select>
+
+              <input type=button value="Go!" />
+        </form>
+        <div id="map-container">
+          <div id="map">  </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Dm02YIVjBPqYPqLE9x2YFrLSAW1iUZs&callback=initMap"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
