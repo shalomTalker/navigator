@@ -1,4 +1,4 @@
-$.get('city.json', function initMap(data)
+$.get('city.json', function initMap(data, callback)
 {
 //reload selsect tag in options
     var cities = Array.from(data);
@@ -30,7 +30,7 @@ $.get('city.json', function initMap(data)
 	                    lat: position.coords.latitude,
 	                    lng: position.coords.longitude
 	                };
-	                console.log(pos);
+                console.log(pos);
 		            return pos;
 	            })
 	            
@@ -49,16 +49,15 @@ $.get('city.json', function initMap(data)
 
             getDirections: function() 
             {
-                var fromStr = Demo.getCurrentLocation;
-                var toStr = Demo.toInput.value;
+                var from = Demo.getCurrentLocation;
+                var to = Demo.toInput.value;
                 var dirRequest = {
-                  origin: fromStr,
-                  destination: toStr,
+                  origin: from,
+                  destination: to,
                   provideRouteAlternatives: true
                 };
                 Demo.dirService.route(dirRequest, Demo.showDirections);
             }
-
         };
     })
-  })
+  });
